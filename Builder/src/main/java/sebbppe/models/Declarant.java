@@ -1,8 +1,7 @@
 package sebbppe.models;
 
-import java.time.LocalDate;
+public class Declarant {
 
-public abstract class Declarant {
     private String firstName;
     private String secondName;
     private String firstLastName;

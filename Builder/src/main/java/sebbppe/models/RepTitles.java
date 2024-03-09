@@ -3,9 +3,9 @@ package sebbppe.models;
 public class RepTitles {
     String titleClass;
     String currency;
-    String value;
+    Double value;
 
-    public RepTitles(String titleClass, String currency, String value) {
+    public RepTitles(String titleClass, String currency, Double value) {
         this.titleClass = titleClass;
         this.currency = currency;
         this.value = value;
@@ -27,11 +27,11 @@ public class RepTitles {
         this.currency = currency;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 }

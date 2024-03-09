@@ -2,9 +2,9 @@ package sebbppe.models;
 
 public class Cash {
     String currency;
-    String value;
+    Double value;
 
-    public Cash(String currency, String value) {
+    public Cash(String currency, Double value) {
         this.currency = currency;
         this.value = value;
     }
@@ -17,11 +17,11 @@ public class Cash {
         this.currency = currency;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 }
