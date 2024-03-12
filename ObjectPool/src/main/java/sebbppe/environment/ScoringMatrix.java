@@ -9,10 +9,10 @@ public class ScoringMatrix {
     private Position matrix[][]=new Position[4][4];
     private final Random random=new Random();
 
-    public ScoringMatrix(){
+    public ScoringMatrix(int row, int col){
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
                 TypePosition type=TypePosition.values()[random.nextInt(3)];
                 Integer value=0;
                 if(PLUSPOINTS.equals(type) || MINUSPOINTS.equals(type)){

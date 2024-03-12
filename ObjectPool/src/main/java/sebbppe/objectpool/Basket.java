@@ -10,14 +10,14 @@ public class Basket {
         this.maxSize = maxSize;
         this.balls = new ArrayList<>();
     }
-    public synchronized Ball acquireObject() {
+    public synchronized Ball acquireBall() {
         if (balls.isEmpty()) {
             return new Ball();
         } else {
             return balls.remove(balls.size() - 1);
         }
     }
-    public synchronized void releaseObject(Ball object) {
+    public synchronized void releaseBall(Ball object) {
         if (balls.size() < maxSize) {
             balls.add(object);
         }

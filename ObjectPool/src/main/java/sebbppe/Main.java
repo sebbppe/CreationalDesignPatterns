@@ -27,7 +27,7 @@ public class Main {
     static Basket basket = new Basket(20);
 
     public static void main(String[] args) throws InterruptedException {
-        ScoringMatrix matrix = new ScoringMatrix();
+        ScoringMatrix matrix = new ScoringMatrix(4,4);
         Double score=0.0;
         String q;
         loadTheBasket();
@@ -46,7 +46,7 @@ public class Main {
                 q= input.next();
                 if ("s".equalsIgnoreCase(q)) {
                     System.out.println(green+"¡Listo! Intentémoslo con la siguiente"+reset);
-                    matrix=new ScoringMatrix();
+                    matrix=new ScoringMatrix(4,4);
                     System.out.println(matrix);
                 }
                 System.out.println("Cesta: "+basket);
@@ -56,7 +56,7 @@ public class Main {
                     generateNewBall();
                     System.out.println(basket);
                 }
-                Ball ball = basket.acquireObject();
+                Ball ball = basket.acquireBall();
                 System.out.println("Pelota a lanzar, " + ball);
                 Position position = shootBall(ball, matrix);
                 System.out.println("Le diste a: " + position);
@@ -91,14 +91,14 @@ public class Main {
     }
 
     private static void generateNewBall() {
-        basket.releaseObject(new Ball());
+        basket.releaseBall(new Ball());
     }
 
     public static Position shootBall(Ball ball, ScoringMatrix matrix) {
         int row;
         while (true) {
-            row = random.nextInt(3);
-            System.out.println("Apuntarás a la fila " + row + ", ¿estás de acuerdo? S/N");
+            row = random.nextInt(3)+1;
+            System.out.println("Apuntarás a la fila " + row+", ¿estás de acuerdo? S/N");
             String q = input.next();
             if ("s".equalsIgnoreCase(q)) {
                 System.out.println("Ok");
